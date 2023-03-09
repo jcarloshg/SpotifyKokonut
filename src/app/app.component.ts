@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spotify-kokonut';
+
+  goToPlok() {
+    document.location.href = 'https://stackoverflow.com';
+  }
 }

@@ -1,0 +1,19 @@
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$theme-colors: (
+  "primary": #1DB954,
+);
+
+// my primary colors
+$custom-colors: (
+  "white": #FFFFFF,
+  "black": #191414,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
