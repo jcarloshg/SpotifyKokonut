@@ -5,6 +5,7 @@ import { TitleComponent } from './title/title.component';
 import { SubtitleComponent } from './subtitle/subtitle.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SecondaryButtonComponent } from './secondary-button/secondary-button.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
     TitleComponent,
     HeaderComponent,
     FooterComponent,
+    SecondaryButtonComponent,
   ],
   imports: [
     CommonModule
@@ -23,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
     TitleComponent,
     HeaderComponent,
     FooterComponent,
+    SecondaryButtonComponent
   ]
 })
 export class ComponentsModule { }

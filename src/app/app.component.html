@@ -10,10 +10,16 @@
 
                 <div>
                     <app-title [value]="'SpotifyKokonut'"></app-title>
+
                     <app-subtitle
                         [value]="'Disfruta de la música de miles de artistas del todo el mundo desde un único sitio'">
                     </app-subtitle>
-                    <app-primary-button [label]="'Ingresa'" (click)="goToPlok()"></app-primary-button>
+
+                    <app-primary-button [label]="'Ingresa'"></app-primary-button>
+
+                    <app-secondary-button [label]="'Regístrate aquí'"
+                        (click)="goToSpotifySingUp()"></app-secondary-button>
+
                 </div>
 
             </div>

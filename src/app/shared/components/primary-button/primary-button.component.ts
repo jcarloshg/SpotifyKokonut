@@ -11,12 +11,8 @@ export class PrimaryButtonComponent {
   @Input() disabled = false;
   @Output() click = new EventEmitter<MouseEvent>();
 
-  @HostListener('click', ['$event'])
   onClick(event: MouseEvent) {
-
     try {
-
-
       if (this.disabled) { return; }
       this.click.emit(event);
     } catch (error) {
