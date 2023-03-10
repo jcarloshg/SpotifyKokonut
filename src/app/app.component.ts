@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LogInService } from './busines_domain_services/authenticate/log-in.service';
+import { LogInService } from './business_domain_services/authenticate/log-in.service';
 import { HttpHeaders, HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
