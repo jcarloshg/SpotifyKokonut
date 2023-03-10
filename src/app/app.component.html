@@ -1,20 +1,26 @@
 <div class="w-100 h-100">
 
     <div class="bg-black w-100">
-        <div class="container" style='height: 75px; border: 1px solid red;'>
+        <div class="container" style='height: 125px; border: 1px solid red;'>
+
+            <img src="./assets/images/logos/logo_spotify.png" alt='image' class="mb-2">
+
         </div>
     </div>
 
     <div class="container">
 
         <div class="col-8">
-            <h1>SpotifyKokonut</h1>
-            <h3>Disfruta de la música de miles de artistas del todo el mundo</h3>
+            <app-title [value]="'SpotifyKokonut'"></app-title>
+            <app-subtitle [value]="'Disfruta de la música de miles de artistas del todo el mundo desde un único sitio'">
+            </app-subtitle>
 
-            <button type="button" class="btn btn-primary text-white" (click)="goToPlok()">Ingresa</button>
+            <app-primary-button [label]="'Ingresa'" (click)="goToPlok()"></app-primary-button>
             &nbsp;
             <button type="button" class="btn btn-primary text-white" (click)="goToSpotifySingUp()">Regístrate
-                Aquí</button>
+                Aquí
+            </button>
+
         </div>
 
         <div></div>
@@ -24,6 +30,7 @@
 
     </div>
 </div>
+
 
 <div class="container bg-black" style='border: 1px solid red; height: 200px;'>
 </div>
