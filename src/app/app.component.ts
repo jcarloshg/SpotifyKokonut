@@ -1,7 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LogInFetch } from 'src/business_domain/authenticate/infrastructure/fetch/fetch.logIn';
 import { LogInService } from './busines_domain_services/authenticate/log-in.service';
 
 @Component({
@@ -18,14 +17,16 @@ export class AppComponent {
   ) { }
 
   ngOnInit(): void {
-    const uRLSearchParams = new URLSearchParams(this.location.path());
-    console.log(uRLSearchParams.get("code"));
-    console.log(this.location.path());
+
+    this.logInService.requestAccessToken(this.location);
+    // const uRLSearchParams = new URLSearchParams(this.location.path());
+    // console.log(uRLSearchParams.get("code"));
+    // console.log(uRLSearchParams.get("state"));
+    // console.log(this.location.path());
   }
 
   goToSpotifySingUp() {
     document.location.href = 'https://www.spotify.com/mx/signup';
-    // window.open("https://www.spotify.com/mx/signup")
   }
 
   async goLogin() {

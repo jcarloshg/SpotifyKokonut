@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { AuthenticateService } from './authenticate.service';
 import { AuthenticateApplication } from 'src/business_domain/authenticate/application/application.authenticate';
@@ -8,7 +9,7 @@ import { AuthenticateApplication } from 'src/business_domain/authenticate/applic
 export class LogInService {
 
   private _domain: AuthenticateApplication;
-  // provate navigation
+  // private navigation
 
   constructor(authenticateService: AuthenticateService) {
     this._domain = authenticateService.domain;
@@ -16,5 +17,10 @@ export class LogInService {
 
   async logIn() {
     await this._domain.logIn();
+  }
+
+  async requestAccessToken(location: Location) {
+    const uRLSearchParams = new URLSearchParams(location.path());
+    console.log(uRLSearchParams.get("code"));
   }
 }
