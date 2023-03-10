@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LogInService } from './busines_domain_services/authenticate/log-in.service';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpHeaders, HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent {
 
   constructor(
     private logInService: LogInService,
-    private activatedRoute: ActivatedRoute,
+    private httpClient: HttpClient,
     private location: Location,
   ) { }
 
@@ -31,8 +31,9 @@ export class AppComponent {
     // console.log(this.location.path());
   }
 
-  goToSpotifySingUp() {
+  async goToSpotifySingUp() {
 
+    const url = 'https://accounts.spotify.com/api/token';
     const spotify_client_id = '3503c48c3bd148ba9bddfce19674184b';
     const spotify_client_secret = 'a57e112df75f4128ba7597ceafdb688d';
 
@@ -41,7 +42,7 @@ export class AppComponent {
       .append("code", `${this.codeReturned}`)
       .append("redirect_uri", 'http://localhost:4200/');
 
-    const encodedData = new Buffer(spotify_client_id + ':' + spotify_client_secret).toString('base64');
+    const encodedData = btoa(spotify_client_id + ':' + spotify_client_secret);
 
     const headers = new HttpHeaders({
       "Authorization": `Basic ${encodedData}`,
@@ -51,7 +52,10 @@ export class AppComponent {
     console.log({ params, headers, encodedData });
 
 
-    // this.httpClient.post()
+    this.httpClient.post(url, params, { headers }).subscribe(token => {
+      console.log({ token });
+    })
+
   }
 
   async goLogin() {
