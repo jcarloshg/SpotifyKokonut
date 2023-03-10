@@ -6,10 +6,13 @@ import { RequestARefreshedAccessTokenRepository } from '../domain/repository.req
 
 export class AuthenticateApplication implements AuthenticateRepository {
 
+    // nominal tracking
     private logInRepository: LogInRepository;
     private getCurrentUserLoggedRepository: GetCurrentUserLoggedRepository;
     private requestAccessTokenRepository: RequestAccessTokenRepository;
     private requestARefreshedAccessTokenRepository: RequestARefreshedAccessTokenRepository;
+    // tracking alternative nominal
+    // auxiliary methods
 
     constructor(params: {
         logInRepo: LogInRepository,
@@ -22,6 +25,11 @@ export class AuthenticateApplication implements AuthenticateRepository {
         this.requestAccessTokenRepository = params.requestAccessTokenRepository;
         this.requestARefreshedAccessTokenRepository = params.requestARefreshedAccessTokenRepository;
     }
+
+
+    //============================================================
+    // nominal tracking
+    //============================================================
 
     public async logIn(): Promise<void> {
         await this.logInRepository.run();
@@ -39,4 +47,12 @@ export class AuthenticateApplication implements AuthenticateRepository {
     async requestARefreshedAccessToken(): Promise<void> {
         await this.requestARefreshedAccessTokenRepository.run();
     }
+
+    //============================================================
+    // tracking alternative nominal
+    //============================================================
+
+    //============================================================
+    // auxiliary methods
+    //============================================================
 }
