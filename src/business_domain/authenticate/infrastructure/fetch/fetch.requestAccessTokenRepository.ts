@@ -3,7 +3,7 @@ import { RequestAccessTokenRepository } from '../../domain/repository.requestAcc
 
 export class RequestAccessTokenFetch implements RequestAccessTokenRepository {
 
-    run(): Promise<void> {
-        throw new Error('Method not implemented.');
+    async run(): Promise<void> {
+        
     }
 }
