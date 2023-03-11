@@ -10,7 +10,7 @@ import { SearcherComponent } from './pages/searcher/searcher.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    SearcherComponent
+    SearcherComponent,
   ],
   imports: [
     CommonModule,
