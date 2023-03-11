@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ViewContentRoutingModule } from './view-content-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { ViewContentRoutingModule } from './view-content-routing.module';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     CommonModule,
-    ViewContentRoutingModule
+    ViewContentRoutingModule,
+    ComponentsModule,
   ]
 })
 export class ViewContentModule { }
