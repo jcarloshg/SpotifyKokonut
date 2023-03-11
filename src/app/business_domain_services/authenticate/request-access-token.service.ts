@@ -18,7 +18,11 @@ export class RequestAccessTokenService {
     this.requestAccessTokenResponse = null;
   }
 
-  async requestAccessToken(codeFromSpotifyApi: string) {
+  public getRequestAccessTokenResponse(): RequestAccessTokenResponse | null {
+    return this.requestAccessTokenResponse;
+  }
+
+  public async requestAccessToken(codeFromSpotifyApi: string) {
     const requestAccessTokenResponse: RequestAccessTokenResponse = await this._domain.requestAccessToken({ code: codeFromSpotifyApi });
     this.requestAccessTokenResponse = requestAccessTokenResponse;
   }

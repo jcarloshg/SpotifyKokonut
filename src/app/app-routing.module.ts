@@ -3,16 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'contenido',
     loadChildren: () => import('./pages/view-content/view-content.module').then(m => m.ViewContentModule),
   },
   {
-    path: 'authenticate',
+    path: 'ingresar',
     loadChildren: () => import('./pages/authenticate/authenticate.module').then(m => m.AuthenticateModule),
   },
   {
     path: '**',
-    redirectTo: '/authenticate',
+    redirectTo: 'ingresar',
   }
 ];
 

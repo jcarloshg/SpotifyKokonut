@@ -1,0 +1,28 @@
+<div class="w-100" style='border: 1px solid red;'>
+
+    <div class="container d-flex align-items-center" style='height: 100%;'>
+        <div class="row">
+
+            <div class="col-5 d-flex align-items-center">
+
+                <div>
+                    <app-title [value]="'SpotifyKokonut'"></app-title>
+
+                    <app-subtitle
+                        [value]="'Disfruta de la música de miles de artistas del todo el mundo desde un único sitio'">
+                    </app-subtitle>
+
+                    <app-primary-button [label]="'Ingresa'" (click)="goLogin()"></app-primary-button>
+                    <app-secondary-button [label]="'Regístrate aquí'"
+                        (click)="goToSpotifySingUp()"></app-secondary-button>
+
+                </div>
+
+            </div>
+
+            <img class="col-7 img-fluid" src="./assets/images/dog_music.gif" alt='image' />
+
+        </div>
+    </div>
+
+</div>

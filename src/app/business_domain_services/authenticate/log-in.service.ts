@@ -19,8 +19,4 @@ export class LogInService {
     await this._domain.logIn();
   }
 
-  async requestAccessToken(location: Location) {
-    const uRLSearchParams = new URLSearchParams(location.path());
-    console.log(uRLSearchParams.get("code"));
-  }
 }
