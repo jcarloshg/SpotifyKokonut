@@ -8,5 +8,11 @@ import { Component, Input } from '@angular/core';
 export class TitleComponent {
 
   @Input() value: String = '[NOT_LABEL]';
+  @Input() setColorWhite: boolean = false;
+
+  public getStyle(): String {
+    const style: String = 'color: white;';
+    return this.setColorWhite ? style : '';
+  }
 
 }

@@ -1,0 +1,5 @@
+.background_gradient {
+    background: radial-gradient(100% 215.81% at 100% 100%, #BC1B8F 0%, #191414 18.75%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+}
