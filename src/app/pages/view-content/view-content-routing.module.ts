@@ -11,6 +11,10 @@ const routes: Routes = [
       {
         path: 'buscador',
         component: SearcherComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'buscador',
       }
     ],
   }
