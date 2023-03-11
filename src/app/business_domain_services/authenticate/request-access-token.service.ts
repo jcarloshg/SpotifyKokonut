@@ -9,21 +9,17 @@ import { RequestAccessTokenResponse } from 'src/business_domain/authenticate/dom
 })
 export class RequestAccessTokenService {
 
-  // todo navigator                                                   // navigator
-  private _domain: AuthenticateApplication;                           // domain
-  // private requestAccessTokenResponse: RequestAccessTokenResponse;  // state
+  // todo navigator                                                           // navigator
+  private _domain: AuthenticateApplication;                                   // domain
+  private requestAccessTokenResponse: RequestAccessTokenResponse | null;      // state
 
   constructor(authenticateService: AuthenticateService) {
     this._domain = authenticateService.domain;
-
+    this.requestAccessTokenResponse = null;
   }
 
   async requestAccessToken(codeFromSpotifyApi: string) {
-
     const requestAccessTokenResponse: RequestAccessTokenResponse = await this._domain.requestAccessToken({ code: codeFromSpotifyApi });
-    console.log('====================================');
-    console.log({ requestAccessTokenResponse });
-    console.log('====================================');
-
+    this.requestAccessTokenResponse = requestAccessTokenResponse;
   }
 }
