@@ -5,6 +5,7 @@ import { LogInFetch } from 'src/business_domain/authenticate/infrastructure/fetc
 import { RequestARefreshedAccessTokenFetch } from '../../../business_domain/authenticate/infrastructure/fetch/fetch.requestARefreshedAccessTokenRepository';
 import { RequestAccessTokenHttpClient } from 'src/business_domain/authenticate/infrastructure/http-client/httpClient.requestAccessTokenRepository';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,14 @@ import { HttpClient } from '@angular/common/http';
 export class AuthenticateService {
 
   private _domain: AuthenticateApplication;
+  private _navigator: AuthenticateNavigator;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router
+  ) {
+
+    this._navigator = new AuthenticateNavigator(router);
 
     this._domain = new AuthenticateApplication({
       logInRepo: new LogInFetch(),
@@ -24,8 +31,21 @@ export class AuthenticateService {
 
   }
 
+  get navigator(): AuthenticateNavigator {
+    return this._navigator;
+  }
+
   get domain(): AuthenticateApplication {
     return this._domain;
+  }
+
+}
+
+export class AuthenticateNavigator {
+  constructor(private router: Router) { }
+
+  public goToHome() {
+    this.router.navigate(['./contenido']);
   }
 
 }

@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { AuthenticateService } from './authenticate.service';
 import { AuthenticateApplication } from 'src/business_domain/authenticate/application/application.authenticate';
@@ -9,7 +8,6 @@ import { AuthenticateApplication } from 'src/business_domain/authenticate/applic
 export class LogInService {
 
   private _domain: AuthenticateApplication;
-  // private navigation
 
   constructor(authenticateService: AuthenticateService) {
     this._domain = authenticateService.domain;
