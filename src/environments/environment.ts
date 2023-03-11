@@ -7,6 +7,7 @@ export const environment = {
 
   // todo move this to other file >:(
   spotify_client_id: '3503c48c3bd148ba9bddfce19674184b',
+  spotify_client_secret: 'a57e112df75f4128ba7597ceafdb688d',
   spotify_response_type: 'code',
   spotify_redirect_uri: 'http://localhost:4200/',
 };

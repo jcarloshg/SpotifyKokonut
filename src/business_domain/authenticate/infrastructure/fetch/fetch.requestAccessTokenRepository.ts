@@ -1,9 +1,9 @@
-import { RequestAccessTokenRepository } from '../../domain/repository.requestAccessToken';
-
+import { RequestAccessTokenParams, RequestAccessTokenRepository, RequestAccessTokenResponse } from '../../domain/repository.requestAccessToken';
 
 export class RequestAccessTokenFetch implements RequestAccessTokenRepository {
 
-    async run(): Promise<void> {
-        
+    run(params: RequestAccessTokenParams): Promise<RequestAccessTokenResponse> {
+        throw new Error('Method not implemented.');
     }
+
 }

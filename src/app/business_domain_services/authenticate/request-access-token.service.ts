@@ -1,25 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Location } from '@angular/common';
+import { AuthenticateApplication } from 'src/business_domain/authenticate/application/application.authenticate';
+import { AuthenticateService } from './authenticate.service';
+import { RequestAccessTokenResponse } from 'src/business_domain/authenticate/domain/repository.requestAccessToken';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestAccessTokenService {
 
-  constructor(private httpClient: HttpClient) { }
+  // todo navigator                                                   // navigator
+  private _domain: AuthenticateApplication;                           // domain
+  // private requestAccessTokenResponse: RequestAccessTokenResponse;  // state
 
-  async requestAccessTokenService() {
+  constructor(authenticateService: AuthenticateService) {
+    this._domain = authenticateService.domain;
 
-    // TODO - add to params [code]
+  }
 
-    const url = 'https://accounts.spotify.com/api/token';
+  async requestAccessToken(codeFromSpotifyApi: string) {
 
-    let body = new URLSearchParams();
-    body.set("grant_type", "authorization_code");
-    body.set("code", "[code]");
-    body.set("redirect_uri", 'http://localhost:4200/hola');
-
-    // const response = this.httpClient.get(url);
+    const requestAccessTokenResponse: RequestAccessTokenResponse = await this._domain.requestAccessToken({ code: codeFromSpotifyApi });
+    console.log('====================================');
+    console.log({ requestAccessTokenResponse });
+    console.log('====================================');
 
   }
 }

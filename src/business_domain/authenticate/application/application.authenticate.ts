@@ -1,7 +1,7 @@
 import { AuthenticateRepository } from '../domain/repository.authenticate';
 import { LogInRepository } from '../domain/repository.logIn';
 import { GetCurrentUserLoggedRepository } from '../domain/repository.getCurrentUserLogged';
-import { RequestAccessTokenRepository } from '../domain/repository.requestAccessToken';
+import { RequestAccessTokenParams, RequestAccessTokenRepository, RequestAccessTokenResponse } from '../domain/repository.requestAccessToken';
 import { RequestARefreshedAccessTokenRepository } from '../domain/repository.requestARefreshedAccessToken';
 
 export class AuthenticateApplication implements AuthenticateRepository {
@@ -26,7 +26,6 @@ export class AuthenticateApplication implements AuthenticateRepository {
         this.requestARefreshedAccessTokenRepository = params.requestARefreshedAccessTokenRepository;
     }
 
-
     //============================================================
     // nominal tracking
     //============================================================
@@ -35,14 +34,16 @@ export class AuthenticateApplication implements AuthenticateRepository {
         await this.logInRepository.run();
     }
 
-    async getCurrentUserLogged(): Promise<void> {
+    public async getCurrentUserLogged(): Promise<void> {
         await this.getCurrentUserLoggedRepository.run();
 
     }
 
-    async requestAccessToken(): Promise<void> {
-        await this.requestAccessTokenRepository.run();
+    public async requestAccessToken(params: RequestAccessTokenParams): Promise<RequestAccessTokenResponse> {
+        const response: RequestAccessTokenResponse = await this.requestAccessTokenRepository.run(params);
+        return response;
     }
+
 
     async requestARefreshedAccessToken(): Promise<void> {
         await this.requestARefreshedAccessTokenRepository.run();
