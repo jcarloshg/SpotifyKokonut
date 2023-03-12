@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Location } from '@angular/common';
 import { AuthenticateApplication } from 'src/business_domain/authenticate/application/application.authenticate';
 import { AuthenticateNavigator, AuthenticateService } from './authenticate.service';
-import { RequestAccessTokenResponse } from 'src/business_domain/authenticate/domain/repository.requestAccessToken';
 import { CookieManagerService } from '../../shared/services/cookie-manager.service';
 
 @Injectable({

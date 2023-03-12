@@ -11,6 +11,11 @@ export class CookieManagerService {
 
   constructor(private cookieService: CookieService) { }
 
+  public checkExisteCookie(key: String) {
+    const name = key as string;
+    return this.cookieService.check(name);
+  }
+
   public getValue(key: String): String {
     const value = this.cookieService.get(key as string);
     return value as String;

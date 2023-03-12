@@ -40,4 +40,8 @@ export class SearchContentNavigation {
 
   constructor(private router: Router) { }
 
+  public goToLandingPage() {
+    this.router.navigate(['./ingresar/landing_page']);
+  }
+
 }
