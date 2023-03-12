@@ -1,8 +1,8 @@
-import { SearchItemsParams } from "./repository.searchItems";
+import { SearchItemsParams, SearcherItemsResponse } from "./repository.searchItems";
 
 export interface SearchContentRepository {
 
-    searchItems(params: SearchItemsParams): Promise<void>;
+    searchItems(params: SearchItemsParams): Promise<SearcherItemsResponse>;
 
     searchSongs(): Promise<void>;
     searchAlbums(): Promise<void>;

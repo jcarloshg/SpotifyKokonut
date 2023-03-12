@@ -1,4 +1,5 @@
-import { SearchItemsParams, SearchItemsRepository } from "../../domain/repository.searchItems";
+import { lastValueFrom } from "rxjs";
+import { SearchItemsParams, SearchItemsRepository, SearcherItemsResponse } from "../../domain/repository.searchItems";
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 export class SearchItemsHttpClient implements SearchItemsRepository {
@@ -7,7 +8,7 @@ export class SearchItemsHttpClient implements SearchItemsRepository {
 
     constructor(private httpClient: HttpClient) { }
 
-    async run(params: SearchItemsParams): Promise<void> {
+    async run(params: SearchItemsParams): Promise<SearcherItemsResponse> {
 
         const url = 'https://api.spotify.com/v1/search';
 
@@ -15,10 +16,15 @@ export class SearchItemsHttpClient implements SearchItemsRepository {
             .append("q", params.keyword as string)
             .append("type", SearchItemsHttpClient.typeItemsToReturnByDefault as string);
 
-        this.httpClient.get(url, body).subscribe(items => {
-            console.log('====================================');
-            console.log({ items });
-            console.log('====================================');
-        });
+        const searchItemsResponse = await lastValueFrom(
+            this.httpClient.get(
+                url,
+                {
+                    params: body,
+                }
+            )
+        );
+
+        return searchItemsResponse as SearcherItemsResponse;
     }
 }

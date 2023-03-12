@@ -1,8 +1,5 @@
-import { SearchAlbumsRepository } from '../domain/repository.searchAlbums';
 import { SearchContentRepository } from '../domain/repository.searchContent';
-import { SearchSongsRepository } from '../domain/repository.searchSongs';
-import { SearchArtistsRepository } from '../domain/repository.searchArtists';
-import { SearchItemsParams, SearchItemsRepository } from '../domain/repository.searchItems';
+import { SearchItemsParams, SearchItemsRepository, SearcherItemsResponse } from '../domain/repository.searchItems';
 
 export class SearchContentApplication implements SearchContentRepository {
 
@@ -16,8 +13,9 @@ export class SearchContentApplication implements SearchContentRepository {
     };
 
 
-    public async searchItems(params: SearchItemsParams): Promise<void> {
-        this.searchItemsRepository.run(params);
+    public async searchItems(params: SearchItemsParams): Promise<SearcherItemsResponse> {
+        const searcherItemsResponse = await this.searchItemsRepository.run(params);
+        return searcherItemsResponse;
     }
 
 
