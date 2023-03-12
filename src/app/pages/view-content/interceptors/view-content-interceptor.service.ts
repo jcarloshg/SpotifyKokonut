@@ -23,13 +23,13 @@ export class ViewContentInterceptorService implements HttpInterceptor {
     const accessToken = this.requestAccessTokenService.getAccessToken();
 
     const headers = new HttpHeaders({
-      "Authorization": `Basic ${accessToken}`,
+      "Authorization": `Bearer ${accessToken}`,
       "Content-Type": "application/x-www-form-urlencoded",
     });
 
     const requestCloned = req.clone({
       headers,
-    })
+    });
 
     return next.handle(requestCloned).pipe(
       catchError((err: HttpErrorResponse) => {

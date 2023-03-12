@@ -15,7 +15,7 @@ export class SearchItemsHttpClient implements SearchItemsRepository {
             .append("q", params.keyword as string)
             .append("type", SearchItemsHttpClient.typeItemsToReturnByDefault as string);
 
-        this.httpClient.post(url, body).subscribe(items => {
+        this.httpClient.get(url, body).subscribe(items => {
             console.log('====================================');
             console.log({ items });
             console.log('====================================');
