@@ -1,0 +1,38 @@
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    scale: 1.05;
+    box-shadow: 0px 0px 15px #00000059;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.trackLabelSmall {
+    color: white;
+    font-size: small;
+}
+
+.trackName {
+    color: white;
+    font-size: small;
+    font-weight: 700;
+}
+
+.trackImage {
+    width: 45px;
+    height: 45px;
+    object-fit: scale-down;
+}
+
+.trackContentExplicit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

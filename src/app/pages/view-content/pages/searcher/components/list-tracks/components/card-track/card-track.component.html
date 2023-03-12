@@ -1,27 +1,30 @@
-<div *ngIf="track" class="col-12 bg-black py-2 px-4 rounded">
+<div *ngIf="track" class="col-12 bg-grey_obscure py-1 px-4 rounded card">
 
-    <div style='display: flex; flex-direction: row; justify-content: center; align-items: center;'>
+    <div class="cardContent">
+
+        <div *ngIf="trackNumberFromList" style='flex: 1;'>
+            <p class="m-0 trackLabelSmall">{{trackNumberFromList}}</p>
+        </div>
 
         <div style='flex: 1;'>
-            <img class="rounded" [src]="getUrlImage()">
+            <img class="rounded trackImage" [src]="getUrlImage()">
         </div>
 
         <div class="mx-2" style='flex: 5;'>
-            <p class="m-0" style="color: white;">{{track.name}}</p>
-            <div style='display: flex; flex-direction: row; align-items: center;'>
-                <span *ngIf="isExplicit()" class="m-1 bg-grey_obscure rounded px-1"
-                    style="color: white; font-size: x-small;">E</span>
-                <p class="m-0" style="color: white; font-size: small;">{{getArtist()}}</p>
+            <p class="m-0 trackName">{{track.name}}</p>
+            <div class="trackContentExplicit">
+                <span *ngIf="isExplicit()" class="mx-1 bg-color-subTitle rounded px-1 trackLabelSmall">E</span>
+                <p class="m-0 trackLabelSmall">{{getArtist()}}</p>
             </div>
         </div>
 
-        <div class="mx-2" style='flex: 5;'>
-            <p class="m-0" style="color: white; font-size: small;">{{getAlbumName()}}</p>
+        <div class="mx-2" style='flex: 4;'>
+            <p class="m-0 trackLabelSmall">{{getAlbumName()}}</p>
         </div>
 
 
         <div style='flex: 1;'>
-            <p class="m-0" style="color: white; font-size: small;">{{getDuration()}}</p>
+            <p class="m-0 trackLabelSmall">{{getDuration()}}</p>
         </div>
 
     </div>

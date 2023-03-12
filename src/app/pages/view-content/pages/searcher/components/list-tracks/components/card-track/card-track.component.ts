@@ -7,7 +7,9 @@ import { Artist, Image, TracksItem } from 'src/business_domain/search_content/do
   styleUrls: ['./card-track.component.css']
 })
 export class CardTrackComponent {
+
   @Input() track!: TracksItem;
+  @Input() trackNumberFromList?: number;
 
   public getArtist(): String {
     const artists: Artist[] = this.track.artists;

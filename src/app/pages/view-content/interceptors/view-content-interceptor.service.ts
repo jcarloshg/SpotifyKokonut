@@ -15,7 +15,6 @@ export class ViewContentInterceptorService implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('hola');
 
     const ignoreInterceptor = this.ignoreErrorHandling(req);
     if (ignoreInterceptor == true) return next.handle(req);

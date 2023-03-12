@@ -16,7 +16,15 @@ export class SearcherInputComponent {
     private requestAccessTokenService: RequestAccessTokenService,
   ) { }
 
-  async searchItems() {
+  public onKeyUp($event: Event) {
+    this.searchItems();
+  }
+
+  public onKeyUpEnter($event: Event) {
+    this.searchItems();
+  }
+
+  private async searchItems() {
 
     const accessToken: String = '[token]';
     const keyword = this.keyword;

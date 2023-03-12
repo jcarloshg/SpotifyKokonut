@@ -1,10 +1,33 @@
-<div *ngIf="tracks">
+<div *ngIf="tracks" style='max-height: 85vh;'>
 
-    <p style="color: white;">Canciones</p>
+    <app-title-third value="Canciones" [setColorWhite]="true">
+    </app-title-third>
 
-    <div class="row g-3">
-        <div class="col-12" *ngFor="let track of tracks.items">
-            <app-card-track [track]="track"></app-card-track>
+    <div class="col-12 py-2 px-4 mb-3 rounded">
+        <div style='display: flex; flex-direction: row; justify-content: center; align-items: center;'>
+
+            <div style='flex: 1;'>
+                <p class="m-0" style="color: white; font-size: small;">#</p>
+            </div>
+
+            <div class="mx-2" style='flex: 6;'>
+                <p class="m-0" style="color: white; font-size: small;">Nombre de la canción</p>
+            </div>
+
+            <div class="mx-2" style='flex: 4;'>
+                <p class="m-0" style="color: white; font-size: small;">Album</p>
+            </div>
+
+
+            <div style='flex: 1;'>
+                <p class="m-0" style="color: white; font-size: small;">Duración</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3" style='max-height: 75vh; overflow-y: scroll; overflow-x: hidden; '>
+        <div class="col-12" *ngFor="let track of tracks.items; let i = index">
+            <app-card-track [track]="track" [trackNumberFromList]="i+1"></app-card-track>
         </div>
     </div>
 

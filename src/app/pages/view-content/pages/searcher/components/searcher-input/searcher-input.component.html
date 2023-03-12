@@ -1,6 +1,6 @@
 <div class="col-lg-10">
 
     <input type="text" style="border-radius: 25px;" [(ngModel)]="keyword" class="form-control"
-        placeholder="Artistas, música y podcast" (keyup.enter)="searchItems()">
+        placeholder="Artistas, música y podcast" (keyup)="onKeyUp($event)" (keyup.enter)="onKeyUpEnter($event)">
 
 </div>
