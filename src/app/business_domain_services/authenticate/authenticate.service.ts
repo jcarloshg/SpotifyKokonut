@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AuthenticateApplication } from 'src/business_domain/authenticate/application/application.authenticate';
 import { GetCurrentUserLoggedFetch } from 'src/business_domain/authenticate/infrastructure/fetch/fetch.getCurrentUserLogged';
 import { LogInFetch } from 'src/business_domain/authenticate/infrastructure/fetch/fetch.logIn';
-import { RequestARefreshedAccessTokenFetch } from '../../../business_domain/authenticate/infrastructure/fetch/fetch.requestARefreshedAccessTokenRepository';
 import { RequestAccessTokenHttpClient } from 'src/business_domain/authenticate/infrastructure/http-client/httpClient.requestAccessTokenRepository';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
