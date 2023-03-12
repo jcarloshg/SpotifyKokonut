@@ -6,6 +6,7 @@ import { RequestARefreshedAccessTokenFetch } from '../../../business_domain/auth
 import { RequestAccessTokenHttpClient } from 'src/business_domain/authenticate/infrastructure/http-client/httpClient.requestAccessTokenRepository';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { RequestARefreshedAccessTokenHttpClient } from 'src/business_domain/authenticate/infrastructure/http-client/httpClient.requestARefreshedAccessTokenRepository';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class AuthenticateService {
       logInRepo: new LogInFetch(),
       getCurrentUserLoggedRepo: new GetCurrentUserLoggedFetch(),
       requestAccessTokenRepository: new RequestAccessTokenHttpClient(this.httpClient),
-      requestARefreshedAccessTokenRepository: new RequestARefreshedAccessTokenFetch()
+      requestARefreshedAccessTokenRepository: new RequestARefreshedAccessTokenHttpClient(this.httpClient),
     });
 
   }
