@@ -6,6 +6,7 @@ import { ViewContentRoutingModule } from './view-content-routing.module';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { SearcherComponent } from './pages/searcher/searcher.component';
 import { SearcherInputComponent } from './pages/searcher/components/searcher-input/searcher-input.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SearcherInputComponent } from './pages/searcher/components/searcher-inp
   imports: [
     CommonModule,
     ViewContentRoutingModule,
+    FormsModule,
     ComponentsModule,
   ]
 })

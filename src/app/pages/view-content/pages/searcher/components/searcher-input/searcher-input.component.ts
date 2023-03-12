@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SearcherInputComponent {
 
+  public keyword: String = '';
+
+  searchItems() {
+    console.log(this.keyword);
+  }
+
 }
