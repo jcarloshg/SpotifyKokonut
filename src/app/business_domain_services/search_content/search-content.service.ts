@@ -23,8 +23,16 @@ export class SearchContentService {
     this._domain = new SearchContentApplication({
       searchItemsRepository: new SearchItemsHttpClient(this.httpClient),
     });
-
   }
+
+  get domain(): SearchContentApplication {
+    return this._domain;
+  }
+
+  get navigator(): SearchContentNavigation {
+    return this._navigator;
+  }
+
 }
 
 

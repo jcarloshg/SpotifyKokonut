@@ -1,6 +1,8 @@
+import { SearchItemsParams } from "./repository.searchItems";
+
 export interface SearchContentRepository {
 
-    searchItems(keyword: String): Promise<void>;
+    searchItems(params: SearchItemsParams): Promise<void>;
 
     searchSongs(): Promise<void>;
     searchAlbums(): Promise<void>;

@@ -1,3 +1,9 @@
 export interface SearchItemsRepository {
-    run(keyword: String): Promise<void>;
+    run(params: SearchItemsParams): Promise<void>;
+}
+
+export interface SearchItemsParams {
+    keyword: String,    //
+    type: String,       // like 'album,artist,track'
+    accessToken: String,      // like'Bearer [token]'
 }
