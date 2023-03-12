@@ -4,6 +4,7 @@ import { FilterButtonsComponent } from './components/filter-buttons/filter-butto
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FormsModule } from '@angular/forms';
 import { ListItemsFoundModule } from './components/list-items-found/list-items-found.module';
+import { FilterButtonsDirective } from './components/filter-buttons/filter-buttons.directive';
 
 
 
@@ -12,6 +13,7 @@ import { ListItemsFoundModule } from './components/list-items-found/list-items-f
   declarations: [
     FilterButtonsComponent,
     SearchInputComponent,
+    FilterButtonsDirective,
   ],
   imports: [
     CommonModule,

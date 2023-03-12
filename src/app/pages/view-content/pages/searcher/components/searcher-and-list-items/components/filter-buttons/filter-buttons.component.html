@@ -1,7 +1,30 @@
-<div style="display: flex;flex-direction: row; align-items: start; border: 1px solid red">
+<div style="display: flex;flex-direction: row; align-items: start;">
 
-    <div style='border: 1px solid red; height: 50px; width: 50px;' (click)="setToDisplayListTracks()">Tracks</div>
-    <div style='border: 1px solid red; height: 50px; width: 50px;' (click)="setToDisplayListArtists()">Artists</div>
-    <div style='border: 1px solid red; height: 50px; width: 50px;' (click)="setToDisplayListAlbums()">Albums</div>
+    <!-- button tracks -->
+    <ng-container *ngIf="isSelectedTrack(); else isNotSelectedTracks">
+        <button class="btn btn-primary rounded-pill text-white me-1" (click)="setToDisplayListTracks()">Tracks</button>
+    </ng-container>
+    <ng-template #isNotSelectedTracks>
+        <button class="btn btn-outline-primary rounded-pill me-1" (click)="setToDisplayListTracks()">Tracks</button>
+    </ng-template>
+
+
+    <!-- button Albums -->
+    <ng-container *ngIf="isSelectedAlbums(); else isNotSelectedAlbums">
+        <button class="btn btn-primary rounded-pill text-white me-1" (click)="setToDisplayListAlbums()">Albums</button>
+    </ng-container>
+    <ng-template #isNotSelectedAlbums>
+        <button class="btn btn-outline-primary rounded-pill me-1" (click)="setToDisplayListAlbums()">Albums</button>
+    </ng-template>
+
+
+    <!-- button artistas -->
+    <ng-container *ngIf="isSelectedArtists(); else isNotSelectedArtists">
+        <button class="btn btn-primary rounded-pill text-white me-1"
+            (click)="setToDisplayListArtists()">Artists</button>
+    </ng-container>
+    <ng-template #isNotSelectedArtists>
+        <button class="btn btn-outline-primary rounded-pill me-1" (click)="setToDisplayListArtists()">Artists</button>
+    </ng-template>
 
 </div>
