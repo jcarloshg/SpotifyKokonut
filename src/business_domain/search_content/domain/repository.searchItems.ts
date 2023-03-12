@@ -10,11 +10,8 @@ export interface SearchItemsParams {
 
 //============================================================
 //============================================================
-export interface SearcherItemsResponse {
-    items: Items;
-}
 
-export interface Items {
+export interface SearcherItemsResponse {
     albums: Albums;
     artists: Artists;
     tracks: Tracks;

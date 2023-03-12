@@ -1,3 +1,5 @@
-<div style='border: 1px solid red;' *ngIf="tracks">
-    <p>{{hola()}}</p>
+<div class="row g-4" style='border: 1px solid red;' *ngIf="tracks">
+    <div class="col-12" *ngFor="let track of tracks.items">
+        <app-card-track [track]="track"></app-card-track>
+    </div>
 </div>

@@ -17,14 +17,13 @@ export class SearchItemsHttpClient implements SearchItemsRepository {
             .append("type", SearchItemsHttpClient.typeItemsToReturnByDefault as string);
 
         const searchItemsResponse = await lastValueFrom(
-            this.httpClient.get(
+            this.httpClient.get<SearcherItemsResponse>(
                 url,
                 {
                     params: body,
                 }
             )
         );
-
 
         return searchItemsResponse as SearcherItemsResponse;
     }

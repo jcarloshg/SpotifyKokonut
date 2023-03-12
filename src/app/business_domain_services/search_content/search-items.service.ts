@@ -12,11 +12,8 @@ export class SearchItemsService {
   private _domain: SearchContentApplication;    // domain
   private _navigator: SearchContentNavigation;  // navigator
   // state
-  private albums: Albums | null = null;
   private _observableAlbums = new Subject<Albums>();
-  private artists: Artists | null = null;
   private _observableArtists = new Subject<Artists>();
-  private tracks: Tracks | null = null;
   private _observableTracks = new Subject<Tracks>();
 
   constructor(authenticateService: SearchContentService) {
@@ -30,12 +27,11 @@ export class SearchItemsService {
 
   public async searchItems(params: SearchItemsParams) {
     const searcherItemsResponse: SearcherItemsResponse = await this._domain.searchItems(params);
-    const plok = searcherItemsResponse.items.albums;
 
     // update state
-    this._observableAlbums.next(searcherItemsResponse.items.albums);
-    this._observableArtists.next(searcherItemsResponse.items.artists);
-    this._observableTracks.next(searcherItemsResponse.items.tracks);
+    this._observableAlbums.next(searcherItemsResponse.albums);
+    this._observableArtists.next(searcherItemsResponse.artists);
+    this._observableTracks.next(searcherItemsResponse.tracks);
   }
 
 }
