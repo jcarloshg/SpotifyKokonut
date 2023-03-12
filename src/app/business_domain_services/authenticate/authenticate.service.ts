@@ -20,7 +20,7 @@ export class AuthenticateService {
     private router: Router
   ) {
 
-    this._navigator = new AuthenticateNavigator(router);
+    this._navigator = new AuthenticateNavigator(this.router);
 
     this._domain = new AuthenticateApplication({
       logInRepo: new LogInFetch(),
