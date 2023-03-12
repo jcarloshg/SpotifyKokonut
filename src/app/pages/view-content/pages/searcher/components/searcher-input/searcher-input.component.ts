@@ -19,7 +19,7 @@ export class SearcherInputComponent {
 
   async searchItems() {
 
-    const accessToken: String = this.requestAccessTokenService.getState()?.access_token!;
+    const accessToken: String = '[token]';
     const keyword = this.keyword;
 
     await this.searchItemsService.searchItems({

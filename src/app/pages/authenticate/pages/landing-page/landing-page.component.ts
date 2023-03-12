@@ -26,7 +26,7 @@ export class LandingPageComponent {
 
   async goToSpotifySingUp() {
     // todo drop this
-    console.log(this.requestAccessTokenService.getState());
+    // print token
   }
 
   async goLogin() { await this.logInService.logIn(); }

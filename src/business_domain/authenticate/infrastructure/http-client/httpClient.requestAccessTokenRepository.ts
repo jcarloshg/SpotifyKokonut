@@ -2,10 +2,14 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from "src/environments/environment";
 import { lastValueFrom } from "rxjs";
 import { RequestAccessTokenParams, RequestAccessTokenRepository, RequestAccessTokenResponse } from "../../domain/repository.requestAccessToken";
+import { CookieManagerService } from 'src/app/shared/services/cookie-manager.service';
 
 export class RequestAccessTokenHttpClient implements RequestAccessTokenRepository {
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(
+        private httpClient: HttpClient,
+        private cookieManagerService: CookieManagerService,
+    ) { }
 
     async run(params: RequestAccessTokenParams): Promise<RequestAccessTokenResponse> {
 
@@ -27,8 +31,15 @@ export class RequestAccessTokenHttpClient implements RequestAccessTokenRepositor
         });
 
         const requestAccessTokenResponse = await lastValueFrom(this.httpClient.post(url, body, { headers }));
+        const requestAccessToken = requestAccessTokenResponse as RequestAccessTokenResponse;
 
-        return requestAccessTokenResponse as RequestAccessTokenResponse;
+        const accessToken = requestAccessToken.access_token;
+        const refreshToken = requestAccessToken.refresh_token;
+
+        this.cookieManagerService.setValue(CookieManagerService.ACCESS_TOKEN, accessToken);
+        this.cookieManagerService.setValue(CookieManagerService.REFRESH_TOKEN, refreshToken);
+
+        return requestAccessToken;
     }
 
 }

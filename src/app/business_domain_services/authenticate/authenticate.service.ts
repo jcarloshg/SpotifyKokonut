@@ -6,6 +6,7 @@ import { RequestAccessTokenHttpClient } from 'src/business_domain/authenticate/i
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RequestARefreshedAccessTokenHttpClient } from 'src/business_domain/authenticate/infrastructure/http-client/httpClient.requestARefreshedAccessTokenRepository';
+import { CookieManagerService } from 'src/app/shared/services/cookie-manager.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class AuthenticateService {
 
   constructor(
     private httpClient: HttpClient,
-    private router: Router
+    private router: Router,
+    private cookieManagerService: CookieManagerService,
   ) {
 
     this._navigator = new AuthenticateNavigator(this.router);
@@ -25,7 +27,7 @@ export class AuthenticateService {
     this._domain = new AuthenticateApplication({
       logInRepo: new LogInFetch(),
       getCurrentUserLoggedRepo: new GetCurrentUserLoggedFetch(),
-      requestAccessTokenRepository: new RequestAccessTokenHttpClient(this.httpClient),
+      requestAccessTokenRepository: new RequestAccessTokenHttpClient(this.httpClient, this.cookieManagerService),
       requestARefreshedAccessTokenRepository: new RequestARefreshedAccessTokenHttpClient(this.httpClient),
     });
 
