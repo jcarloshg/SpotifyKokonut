@@ -19,6 +19,10 @@ export class ListTrackComponent {
       .subscribe(tracks => this.tracks = tracks);
   }
 
+  ngOnInit(): void {
+    this.tracks = this.searchItemsService.tracks;
+  }
+
   ngOnDestroy(): void {
     this.tracks$.unsubscribe();
   }
