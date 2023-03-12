@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FilterButtonsComponent } from './components/filter-buttons/filter-buttons.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ListItemsFoundComponent } from './components/list-items-found/list-items-found.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,11 @@ import { ListItemsFoundComponent } from './components/list-items-found/list-item
     ListItemsFoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+  ],
+  exports: [
+    SearchInputComponent,
   ]
 })
 export class SearcherAndListItemsModule { }
