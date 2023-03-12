@@ -23,8 +23,4 @@ export class ListTrackComponent {
     this.tracks$.unsubscribe();
   }
 
-  hola(){
-    this.tracks?.items.length
-  }
-
 }

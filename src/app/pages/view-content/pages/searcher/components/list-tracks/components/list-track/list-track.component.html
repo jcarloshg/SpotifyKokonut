@@ -1,5 +1,11 @@
-<div class="row g-4" style='border: 1px solid red;' *ngIf="tracks">
-    <div class="col-12" *ngFor="let track of tracks.items">
-        <app-card-track [track]="track"></app-card-track>
+<div *ngIf="tracks">
+
+    <p style="color: white;">Canciones</p>
+
+    <div class="row g-3">
+        <div class="col-12" *ngFor="let track of tracks.items">
+            <app-card-track [track]="track"></app-card-track>
+        </div>
     </div>
+
 </div>
