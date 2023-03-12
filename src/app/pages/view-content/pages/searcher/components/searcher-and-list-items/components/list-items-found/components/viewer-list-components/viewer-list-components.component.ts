@@ -31,4 +31,8 @@ export class ViewerListComponentsComponent {
     return this.optionsToDisplayLists == OptionsToDisplayLists.SHOW_ARTISTS;
   }
 
+  public showAlbums(): boolean {
+    return this.optionsToDisplayLists == OptionsToDisplayLists.SHOW_ALBUMS;
+  }
+
 }
