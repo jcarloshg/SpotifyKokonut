@@ -30,6 +30,8 @@ export class SearchItemsService {
 
   public async searchItems(params: SearchItemsParams) {
     const searcherItemsResponse: SearcherItemsResponse = await this._domain.searchItems(params);
+    const plok = searcherItemsResponse.items.albums;
+
     // update state
     this._observableAlbums.next(searcherItemsResponse.items.albums);
     this._observableArtists.next(searcherItemsResponse.items.artists);

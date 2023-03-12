@@ -25,6 +25,7 @@ export class SearchItemsHttpClient implements SearchItemsRepository {
             )
         );
 
+
         return searchItemsResponse as SearcherItemsResponse;
     }
 }
