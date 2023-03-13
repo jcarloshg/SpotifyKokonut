@@ -5,11 +5,11 @@ import { Image } from '../../../../../../../../../business_domain/search_content
 
 
 @Component({
-  selector: 'app-card-track',
-  templateUrl: './card-track.component.html',
-  styleUrls: ['./card-track.component.css']
+  selector: 'album-details-app-card-track',
+  templateUrl: './album-details-card-track.component.html',
+  styleUrls: ['./album-details-card-track.component.css']
 })
-export class CardTrackComponent {
+export class AlbumDetailsCardTrackComponent {
 
   @Input() track!: Item;
 
