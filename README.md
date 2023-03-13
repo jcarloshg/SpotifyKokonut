@@ -1,5 +1,18 @@
 # SpotifyKokonut
 
+## Tabla de contenido
+-   [Casos de uso](#casos-de-uso).
+    -   [Ingresar](#ingresar).
+    -   [Ver mi perfil](#ver-mi-perfil).
+    -   [Administrar cobros](#administrar-cobros).
+-   [Casos de uso](#casos-de-uso).
+    -   [Ingresar](#ingresar).
+    -   [Ver mi perfil](#ver-mi-perfil).
+    -   [Administrar cobros](#administrar-cobros).
+
+# Casos de uso
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 ## Development server
