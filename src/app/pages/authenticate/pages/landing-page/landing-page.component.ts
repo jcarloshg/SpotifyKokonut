@@ -25,8 +25,8 @@ export class LandingPageComponent {
   }
 
   async goToSpotifySingUp() {
-    // todo drop this
-    // print token
+    // window.open('https://www.spotify.com/mx/signup')
+    await this.logInService.logIn();
   }
 
   async goLogin() { await this.logInService.logIn(); }

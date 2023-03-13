@@ -34,6 +34,7 @@ export class SearchItemsService {
   public async searchItems(params: SearchItemsParams) {
     const searcherItemsResponse: SearcherItemsResponse = await this._domain.searchItems(params);
 
+
     // update state
     this._albums = searcherItemsResponse.albums;
     this._artists = searcherItemsResponse.artists;

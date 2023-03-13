@@ -12,7 +12,6 @@ export class LogInFetch implements LogInRepository {
         const urlHref = `https://accounts.spotify.com/authorize?${response_type}&${client_id}&scope=user-read-private%20user-read-email&${redirect_uri}`;
 
         document.location.href = urlHref;
-        // window.open(urlHref)
     }
 
 }

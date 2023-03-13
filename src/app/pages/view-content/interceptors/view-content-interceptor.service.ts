@@ -34,6 +34,7 @@ export class ViewContentInterceptorService implements HttpInterceptor {
       catchError((err: HttpErrorResponse) => {
 
         console.log('====================================');
+        console.log(err.status);
         console.log({ err });
         console.log('====================================');
 
