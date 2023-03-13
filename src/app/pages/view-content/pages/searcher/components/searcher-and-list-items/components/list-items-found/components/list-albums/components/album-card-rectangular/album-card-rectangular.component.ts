@@ -30,7 +30,8 @@ export class AlbumCardRectangularComponent {
   }
 
   public goToAlbumDetailsPage() {
-    this.searchContentService.navigator.goToAlbumDetailsPage();
+    const albumID = this.album.id;
+    this.searchContentService.navigator.goToAlbumDetailsPage(albumID);
   }
 
 
