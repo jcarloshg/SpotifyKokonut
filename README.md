@@ -6,7 +6,8 @@
     -   [Buscar elementos](#buscar-elementos)
     -   [Escuchar status del Internet](#escuchar-status-del-internet)
 -   [Acerca de el UI/UX](#acerca-de-el-ui/ux)
-    -   [Autenticarse](#autenticarse)
+    -   [Colores](#colores)
+    -   [Consideraciones](#consideraciones)
 -   [Feedback](#feedback)
 -   [Información de Angular](#información-de-angular).
     -   [Ingresar](#ingresar)
@@ -41,8 +42,21 @@ De acuerdo con los objetivos presentados en el documento de la prueba técnica s
 
 
 ## Acerca de el UI/UX
-
 Para algún comentario o recomendación, por favor manda mensaje a este correo [carlosj12336@gmail.com](carlosj12336@gmail.com)
+
+### Colores
+Se utilizaron los colores principales de Spotify agregando un gris & morado para agregar mas contraste. [colores de Spotify](https://developer.spotify.com/documentation/general/design-and-branding/#using-our-colors)
+
+<img src="./src/doc/colores.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 400px">
+
+### Consideraciones
+**Tamaño pantalla :** se opto un una medida común de 1920×1080px
+
+**Tamaño pantalla :** se opto un una medida común de 1920×1080px
+
+**Tamaño pantalla :** se opto un una medida común de 1920×1080px
+
+
 
 
 ## Feedback
