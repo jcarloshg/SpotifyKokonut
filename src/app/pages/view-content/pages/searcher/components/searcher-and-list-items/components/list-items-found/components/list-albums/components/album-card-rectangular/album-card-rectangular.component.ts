@@ -16,10 +16,10 @@ export class AlbumCardRectangularComponent {
   public getUrlImage(): String {
     try {
       const albums: Image[] = this.album.images;
-      if (albums.length == 0) return '[not_photo]';
+      if (albums.length == 0) return './assets/images/not_artist_photo.jpg';
       return albums[1].url;
     } catch (error) {
-      return '[not_photo]';
+      return './assets/images/not_artist_photo.jpg';
     }
   }
 
