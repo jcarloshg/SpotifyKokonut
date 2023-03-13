@@ -1,17 +1,57 @@
 # SpotifyKokonut
 
 ## Tabla de contenido
--   [Casos de uso](#casos-de-uso).
-    -   [Ingresar](#ingresar).
-    -   [Ver mi perfil](#ver-mi-perfil).
-    -   [Administrar cobros](#administrar-cobros).
--   [Casos de uso](#casos-de-uso).
-    -   [Ingresar](#ingresar).
-    -   [Ver mi perfil](#ver-mi-perfil).
-    -   [Administrar cobros](#administrar-cobros).
+-   [Casos de uso](#casos-de-uso)
+    -   [Autenticarse](#autenticarse)
+    -   [Buscar elementos](#buscar-elementos)
+    -   [Escuchar status del Internet](#escuchar-status-del-internet)
+-   [Acerca de el UI/UX](#acerca-de-el-ui/ux)
+    -   [Autenticarse](#autenticarse)
+-   [Feedback](#feedback)
+-   [Información de Angular](#información-de-angular).
+    -   [Ingresar](#ingresar)
+    -   [Ver mi perfil](#ver-mi-perfil)
 
 # Casos de uso
+De acuerdo con los objetivos presentados en el documento de la prueba técnica se obtuvieron los siguientes `casos de uso`.
 
+<img src="./src/doc/photo_uses_cases.jpeg" alt="Alt text"  title="Optional title" style="display: inline-block; width: 400px">
+
+## Autenticarse
+**Objetivo :** Permitir a los usuarios iniciar sesión. Mientras que si un usuario no tenga una cuenta permitir la opción de crear una.
+
+**Actor :**  Usuario.
+
+**Responsable :** Jose Carlos Huerta Garcia
+
+## Buscar elementos
+**Objetivo :** Permitir al cliente iniciar una búsqueda a través de una palabra clave `(keyword)`.
+
+**Actor :**  Usuario.
+
+**Responsable :** Jose Carlos Huerta Garcia
+## Escuchar status del Internet
+
+**Objetivo :** Dar al usuario información acerca del estatus de su conexión de internet.
+
+**Actor :**  Usuario.
+
+**Responsable :** Jose Carlos Huerta Garcia
+
+
+
+## Acerca de el UI/UX
+
+Para algún comentario o recomendación, por favor manda mensaje a este correo [carlosj12336@gmail.com](carlosj12336@gmail.com)
+
+
+## Feedback
+
+Para algún comentario o recomendación, por favor manda mensaje a este correo [carlosj12336@gmail.com](carlosj12336@gmail.com)
+
+
+
+# Información de Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
