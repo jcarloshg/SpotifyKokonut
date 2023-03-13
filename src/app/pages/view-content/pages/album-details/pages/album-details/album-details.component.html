@@ -1,24 +1,26 @@
-<div *ngIf="album" class="container py-5">
-    <div class="row g-5">
+<div class="background_gradient_green min-vh-100">
 
-        <!-- <div style='display: flex; flex-direction: row; align-items: flex-start;'>
-            <img class="rounded trackImage" [src]="getUrlImage()">
-            <div class="mx-3 col-lg-12">
-                <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
-                <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
+    <div *ngIf="album" class="container py-5">
+        <div class="row g-5">
+
+            <!-- <div style='display: flex; flex-direction: row; align-items: flex-start;'>
+                <img class="rounded trackImage" [src]="getUrlImage()">
+                <div class="mx-3 col-lg-12">
+                    <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
+                    <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
+                </div>
+            </div> -->
+
+            <div class="row my-5">
+                <img class="rounded trackImage" [src]="getUrlImage()">
+                <div class="col-md-6">
+                    <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
+                    <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
+                </div>
             </div>
-        </div> -->
 
-        <div class="row my-5">
-            <img class="rounded trackImage" [src]="getUrlImage()">
-            <div class="col-md-6">
-                <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
-                <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
-            </div>
-        </div>
-
-        <!-- <div class="row my-5">
-            <div class="col-md-4">
+            <!-- <div class="row my-5">
+                <div class="col-md-4">
                 <img class="rounded trackImage" [src]="getUrlImage()">
             </div>
             <div class="col-md-8">
@@ -28,30 +30,32 @@
         </div> -->
 
 
-        <div class="col-lg-6">
-            <p class="m-0 fw-bold text-white">Canciones</p>
+            <div class="col-lg-6">
+                <p class="m-0 fw-bold text-white">Canciones</p>
 
-            <album-details-app-list-track [tracks]="album.tracks"></album-details-app-list-track>
+                <album-details-app-list-track [tracks]="album.tracks"></album-details-app-list-track>
+
+            </div>
+
+            <div class="col-lg-6">
+                <p class="m-0 fw-bold text-white">Tipo</p>
+                <p class="m-0 fw-lighter text-white-50">{{album.album_type}}</p>
+                &nbsp;
+
+                <p class="m-0 fw-bold text-white">Número de canciones</p>
+                <p class="m-0 fw-lighter text-white-50">{{album.total_tracks}}</p>
+                &nbsp;
+
+                <p class="m-0 fw-bold text-white">Géneros</p>
+                <p class="m-0 fw-lighter text-white-50">{{getGenders()}}</p>
+                &nbsp;
+
+                <p class="m-0 fw-bold text-white">Copyright</p>
+                <p class="m-0 fw-lighter text-white-50" *ngFor="let copy of getCopyrights()">{{copy}}</p>
+                &nbsp;
+            </div>
 
         </div>
-
-        <div class="col-lg-6">
-            <p class="m-0 fw-bold text-white">Tipo</p>
-            <p class="m-0 fw-lighter text-white-50">{{album.album_type}}</p>
-            &nbsp;
-
-            <p class="m-0 fw-bold text-white">Número de canciones</p>
-            <p class="m-0 fw-lighter text-white-50">{{album.total_tracks}}</p>
-            &nbsp;
-
-            <p class="m-0 fw-bold text-white">Géneros</p>
-            <p class="m-0 fw-lighter text-white-50">{{getGenders()}}</p>
-            &nbsp;
-
-            <p class="m-0 fw-bold text-white">Copyright</p>
-            <p class="m-0 fw-lighter text-white-50" *ngFor="let copy of getCopyrights()">{{copy}}</p>
-            &nbsp;
-        </div>
-
     </div>
+
 </div>

@@ -1,23 +1,25 @@
-<div class="container py-5">
-    <div class="row g-5">
+<div class="background_gradient min-vh-100">
+    <div class="container py-5">
+        <div class="row g-5">
 
-        <div class="col-xl-4">
-            <app-title value="Buscador" [setColorWhite]="true"></app-title>
-            <app-subtitle value="Encuentra la música que te mueve" [setColorWhite]="true"></app-subtitle>
+            <div class="col-xl-4">
+                <app-title value="Buscador" [setColorWhite]="true"></app-title>
+                <app-subtitle value="Encuentra la música que te mueve" [setColorWhite]="true"></app-subtitle>
 
-            <app-search-input></app-search-input>
+                <app-search-input></app-search-input>
 
-            <app-title-third value="Encuentra miles de canciones, artistas y álbumes" [setColorWhite]="true">
-            </app-title-third>
+                <app-title-third value="Encuentra miles de canciones, artistas y álbumes" [setColorWhite]="true">
+                </app-title-third>
 
-            <app-filter-buttons></app-filter-buttons>
+                <app-filter-buttons></app-filter-buttons>
+
+            </div>
+
+            <div class="col-xl-8">
+                <app-viewer-list-components></app-viewer-list-components>
+                <app-image-background></app-image-background>
+            </div>
 
         </div>
-
-        <div class="col-xl-8">
-            <app-viewer-list-components></app-viewer-list-components>
-            <app-image-background></app-image-background>
-        </div>
-
     </div>
 </div>

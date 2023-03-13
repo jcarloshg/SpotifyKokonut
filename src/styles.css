@@ -28,3 +28,16 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #292929;
 }
+
+
+.background_gradient {
+    background: radial-gradient(100% 215.81% at 100% 100%, #BC1B8F 0%, #000 29.06%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+}
+
+.background_gradient_green {
+    background: radial-gradient(100% 215.81% at 100% 100%, #1DB954 0%, #000 29.06%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+}
