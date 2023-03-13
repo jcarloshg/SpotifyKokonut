@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SearchContentService } from 'src/app/business_domain_services/search_content/search-content.service';
 import { Artist, Image, TracksItem } from 'src/business_domain/search_content/domain/repository.searchItems';
 
 @Component({
@@ -10,6 +11,13 @@ export class CardTrackComponent {
 
   @Input() track!: TracksItem;
   @Input() trackNumberFromList?: number;
+
+  constructor(private searchContentService: SearchContentService) { }
+
+  public goToAlbumDetailsPage() {
+    const albumID = this.track.album.id;
+    this.searchContentService.navigator.goToAlbumDetailsPage(albumID);
+  }
 
   public getArtist(): String {
     const artists: Artist[] = this.track.artists;

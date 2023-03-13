@@ -18,19 +18,15 @@ export class GetAlbumDetailsService {
     this._navigator = this.searchContentService.navigator;
   }
 
-  public get album(): Album | null {
-    return this._album;
-  }
+  public get navigator(): SearchContentNavigation { return this._navigator; }
+  public get album(): Album | null { return this._album; }
 
   public async getAlbumDetails(albumID: String): Promise<Album | null> {
-
     const albumSelected = await this._domain.getAlbumDetails(albumID);
-
     if (albumSelected == null) {
       // show error
       return null;
     }
-
     this._album = albumSelected;
     return this._album;
   }
