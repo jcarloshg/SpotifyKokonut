@@ -2,19 +2,19 @@
 
     <div class="cardContent">
 
-        <div *ngIf="trackNumberFromList" style='flex: 1;'>
-            <p class="m-0 trackLabelSmall">{{trackNumberFromList}}</p>
+        <div style='flex: 1;'>
+            <p class="m-0 trackLabelSmall">{{track.track_number}}</p>
         </div>
 
         <div style='flex: 1;'>
             <img class="rounded trackImage" [src]="getUrlImage()">
         </div>
 
-        <div class="mx-2" style='flex: 5;'>
-            <p class="m-0 trackName">{{track.name}}</p>
+        <div class="mx-2" style='flex: 4;'>
             <div class="trackContentExplicit">
+                <p class="m-0 trackName">{{track.name}}</p>
                 <span *ngIf="isExplicit()" class="mx-1 bg-color-subTitle rounded px-1 trackLabelSmall">E</span>
-                <p class="m-0 trackLabelSmall">{{getArtist()}}</p>
+                <!-- <p class="m-0 trackLabelSmall">{{getArtist()}}</p> -->
             </div>
         </div>
 
@@ -23,7 +23,7 @@
         </div>
 
 
-        <div style='flex: 1;'>
+        <div style='flex: 2;'>
             <p class="m-0 trackLabelSmall">{{getDuration()}}</p>
         </div>
 

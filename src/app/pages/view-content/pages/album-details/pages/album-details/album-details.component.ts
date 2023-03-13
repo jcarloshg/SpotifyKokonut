@@ -20,10 +20,6 @@ export class AlbumDetailsComponent {
   async ngOnInit(): Promise<void> {
     const albumIDToSearch = this.activatedRoute.snapshot.paramMap.get('id') || '';
     this.album = await this.getAlbumDetailsService.getAlbumDetails(albumIDToSearch);
-
-    console.log('====================================');
-    console.log(this.album?.tracks);
-    console.log('====================================');
   }
 
   public getArtist(): String {
@@ -49,9 +45,6 @@ export class AlbumDetailsComponent {
 
   public playAlbum() {
     const uriSpotify = this.album?.external_urls.spotify;
-    console.log('====================================');
-    console.log({ uriSpotify });
-    console.log('====================================');
     window.open(uriSpotify);
   }
 

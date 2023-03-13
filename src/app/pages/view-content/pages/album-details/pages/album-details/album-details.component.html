@@ -30,40 +30,18 @@
 
         <div class="col-lg-6">
             <p class="m-0 fw-bold text-white">Canciones</p>
-            <div class="row">
 
-                <div class="col-12 py-2 px-4 mb-3 rounded">
-                    <div style='display: flex; flex-direction: row; justify-content: center; align-items: center;'>
+            <app-list-track [tracks]="album.tracks"></app-list-track>
 
-                        <div style='flex: 1;'>
-                            <p class="m-0" style="color: white; font-size: small;">#</p>
-                        </div>
-
-                        <div class="mx-2" style='flex: 6;'>
-                            <p class="m-0" style="color: white; font-size: small;">Nombre de la canción</p>
-                        </div>
-
-                        <div class="mx-2" style='flex: 4;'>
-                            <p class="m-0" style="color: white; font-size: small;">Album</p>
-                        </div>
-
-                        <div style='flex: 1;'>
-                            <p class="m-0" style="color: white; font-size: small;">Duración</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12" *ngFor="let track of album.tracks.items; let i = index">
-                    <p class="fs-6 m-0 fw-bold text-white">{{track.name}}</p>
-                    <!-- <app-card-track [track]="track" [trackNumberFromList]="i+1"></app-card-track> -->
-                </div>
-
-            </div>
         </div>
 
         <div class="col-lg-6">
             <p class="m-0 fw-bold text-white">Tipo</p>
             <p class="m-0 fw-lighter text-white-50">{{album.album_type}}</p>
+            &nbsp;
+
+            <p class="m-0 fw-bold text-white">Número de canciones</p>
+            <p class="m-0 fw-lighter text-white-50">{{album.total_tracks}}</p>
             &nbsp;
 
             <p class="m-0 fw-bold text-white">Géneros</p>
