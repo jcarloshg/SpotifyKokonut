@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 })
 export class SearcherAndListItemsService {
 
-  private _optionsToDisplayLists = OptionsToDisplayLists.SHOW_TRACKS;
+  private _optionsToDisplayLists = OptionsToDisplayLists.SHOW_ALBUMS;
   private _observableOptionsToDisplayLists = new Subject<OptionsToDisplayLists>();
 
   constructor() { }

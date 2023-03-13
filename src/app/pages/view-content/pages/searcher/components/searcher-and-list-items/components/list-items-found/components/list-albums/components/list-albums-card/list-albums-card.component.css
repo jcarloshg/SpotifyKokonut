@@ -1,0 +1,8 @@
+.list-albums-container {
+    max-height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

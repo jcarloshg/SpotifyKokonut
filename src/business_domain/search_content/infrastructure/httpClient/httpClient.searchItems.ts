@@ -14,6 +14,7 @@ export class SearchItemsHttpClient implements SearchItemsRepository {
 
         const body = new HttpParams()
             .append("q", params.keyword as string)
+            .append("limit", "48")
             .append("type", SearchItemsHttpClient.typeItemsToReturnByDefault as string);
 
         const searchItemsResponse = await lastValueFrom(

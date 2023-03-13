@@ -1,1 +1,11 @@
-<p>hola pancho</p>
+<div *ngIf="albums">
+
+    <app-title-third value="Albums" [setColorWhite]="true">
+    </app-title-third>
+
+    <div class="list-albums-container">
+        <app-album-card-rectangular *ngFor="let album of albums.items; let i = index"
+            [album]="album"></app-album-card-rectangular>
+    </div>
+
+</div>

@@ -20,10 +20,10 @@ export class CardTrackComponent {
   public getUrlImage(): String {
     try {
       const albums: Image[] = this.track.album.images;
-      if (albums.length == 0) return 'random';
+      if (albums.length == 0) return '[not_photo]';
       return albums[albums.length - 1].url;
     } catch (error) {
-      return 'nameArtists.join(';
+      return '[not_photo]';
     }
   }
 

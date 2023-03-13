@@ -1,0 +1,9 @@
+<div *ngIf="album" class="bg-grey_obscure rounded card mx-1 my-2" style='width: 120px; height: 160px;'>
+
+    <img class="rounded albumImage" [src]="getUrlImage()">
+
+    <p class="m-0 albumName"> {{album.name}} </p>
+    <p class="m-0 albumLabelSmall">{{getArtist()}}</p>
+    <!-- <p class="m-0 albumLabelSmall">{{album.album_type}}</p> -->
+
+</div>

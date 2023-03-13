@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SearchItemsService } from 'src/app/business_domain_services/search_content/search-items.service';
-import { Tracks } from 'src/business_domain/search_content/domain/repository.searchItems';
+import { Albums } from 'src/business_domain/search_content/domain/repository.searchItems';
 
 @Component({
     selector: 'app-list-albums-card',
@@ -10,21 +10,21 @@ import { Tracks } from 'src/business_domain/search_content/domain/repository.sea
 })
 export class ListAlbumsCardComponent {
 
-    public tracks: Tracks | null = null;
-    private tracks$: Subscription;
+    public albums: Albums | null = null;
+    private albums$: Subscription;
 
     constructor(private searchItemsService: SearchItemsService) {
-        this.tracks$ = this.searchItemsService
-            .observableTracks
-            .subscribe(tracks => this.tracks = tracks);
+        this.albums$ = this.searchItemsService
+            .observableAlbums
+            .subscribe(albums => this.albums = albums);
     }
 
     ngOnInit(): void {
-        this.tracks = this.searchItemsService.tracks;
+        this.albums = this.searchItemsService.albums;
     }
 
     ngOnDestroy(): void {
-        this.tracks$.unsubscribe();
+        this.albums$.unsubscribe();
     }
 
 }
