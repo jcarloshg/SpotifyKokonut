@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListenNetworkStatusService } from 'src/app/shared/services/listen-network-status.service';
 
 @Component({
   selector: 'app-connection-failed',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./connection-failed.component.css']
 })
 export class ConnectionFailedComponent {
-
+  constructor(private listenNetworkStatusService: ListenNetworkStatusService) { }
 }

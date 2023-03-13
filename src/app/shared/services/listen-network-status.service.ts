@@ -19,6 +19,9 @@ export class ListenNetworkStatusService {
       if (status == ListenNetworkStatusService.OFFLINE) {
         this.router.navigate(['./publico/conexion-fallida']);
       }
+      if (status == ListenNetworkStatusService.ONLINE) {
+        this.router.navigate(['./contenido']);
+      }
     });
 
   }
