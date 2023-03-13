@@ -3,9 +3,9 @@ export interface SearchItemsRepository {
 }
 
 export interface SearchItemsParams {
-    keyword: String,    //
-    type: String,       // like 'album,artist,track'
-    accessToken: String,      // like'Bearer [token]'
+    keyword: String,        //
+    type: String,           // like 'album,artist,track'
+    accessToken: String,    // like'Bearer [token]'
 }
 
 //============================================================
