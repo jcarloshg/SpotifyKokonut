@@ -1,4 +1,5 @@
-<div *ngIf="album" class="bg-grey_obscure rounded card mx-1 my-2" style='width: 120px; height: 160px;'>
+<div *ngIf="album" class="bg-grey_obscure rounded card mx-1 my-2" style='width: 120px; height: 160px;'
+    (click)="goToAlbumDetailsPage()">
 
     <img class="rounded albumImage" [src]="getUrlImage()">
 
