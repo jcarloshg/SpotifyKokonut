@@ -1,3 +1,79 @@
 <div *ngIf="album" class="container py-5">
-    <app-title value="Album-details" [setColorWhite]="true"></app-title>
+    <div class="row g-5">
+
+        <!-- <div style='display: flex; flex-direction: row; align-items: flex-start;'>
+            <img class="rounded trackImage" [src]="getUrlImage()">
+            <div class="mx-3 col-lg-12">
+                <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
+                <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
+            </div>
+        </div> -->
+
+        <div class="row my-5">
+            <img class="rounded trackImage" [src]="getUrlImage()">
+            <div class="col-md-6">
+                <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
+                <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
+            </div>
+        </div>
+
+        <!-- <div class="row my-5">
+            <div class="col-md-4">
+                <img class="rounded trackImage" [src]="getUrlImage()">
+            </div>
+            <div class="col-md-8">
+                <p class="fs-1 m-0 fw-bold text-white">{{album.name}}</p>
+                <p class="fs-4 m-0 fw-bold text-white-50">{{getArtist()}}</p>
+            </div>
+        </div> -->
+
+
+        <div class="col-lg-6">
+            <p class="m-0 fw-bold text-white">Canciones</p>
+            <div class="row">
+
+                <div class="col-12 py-2 px-4 mb-3 rounded">
+                    <div style='display: flex; flex-direction: row; justify-content: center; align-items: center;'>
+
+                        <div style='flex: 1;'>
+                            <p class="m-0" style="color: white; font-size: small;">#</p>
+                        </div>
+
+                        <div class="mx-2" style='flex: 6;'>
+                            <p class="m-0" style="color: white; font-size: small;">Nombre de la canción</p>
+                        </div>
+
+                        <div class="mx-2" style='flex: 4;'>
+                            <p class="m-0" style="color: white; font-size: small;">Album</p>
+                        </div>
+
+                        <div style='flex: 1;'>
+                            <p class="m-0" style="color: white; font-size: small;">Duración</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12" *ngFor="let track of album.tracks.items; let i = index">
+                    <p class="fs-6 m-0 fw-bold text-white">{{track.name}}</p>
+                    <!-- <app-card-track [track]="track" [trackNumberFromList]="i+1"></app-card-track> -->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <p class="m-0 fw-bold text-white">Tipo</p>
+            <p class="m-0 fw-lighter text-white-50">{{album.album_type}}</p>
+            &nbsp;
+
+            <p class="m-0 fw-bold text-white">Géneros</p>
+            <p class="m-0 fw-lighter text-white-50">{{getGenders()}}</p>
+            &nbsp;
+
+            <p class="m-0 fw-bold text-white">Copyright</p>
+            <p class="m-0 fw-lighter text-white-50" *ngFor="let copy of getCopyrights()">{{copy}}</p>
+            &nbsp;
+        </div>
+
+    </div>
 </div>

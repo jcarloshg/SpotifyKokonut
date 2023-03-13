@@ -1,0 +1,32 @@
+<div *ngIf="track" class="col-12 bg-grey_obscure py-1 px-4 rounded card">
+
+    <div class="cardContent">
+
+        <div *ngIf="trackNumberFromList" style='flex: 1;'>
+            <p class="m-0 trackLabelSmall">{{trackNumberFromList}}</p>
+        </div>
+
+        <div style='flex: 1;'>
+            <img class="rounded trackImage" [src]="getUrlImage()">
+        </div>
+
+        <div class="mx-2" style='flex: 5;'>
+            <p class="m-0 trackName">{{track.name}}</p>
+            <div class="trackContentExplicit">
+                <span *ngIf="isExplicit()" class="mx-1 bg-color-subTitle rounded px-1 trackLabelSmall">E</span>
+                <p class="m-0 trackLabelSmall">{{getArtist()}}</p>
+            </div>
+        </div>
+
+        <div class="mx-2" style='flex: 4;'>
+            <p class="m-0 trackLabelSmall">{{getAlbumName()}}</p>
+        </div>
+
+
+        <div style='flex: 1;'>
+            <p class="m-0 trackLabelSmall">{{getDuration()}}</p>
+        </div>
+
+    </div>
+
+</div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetAlbumDetailsService } from 'src/app/business_domain_services/search_content/get-album-details.service';
-import { Album } from 'src/business_domain/search_content/domain/repository.getAlbumDetails';
+import { Album, Artist, Image } from 'src/business_domain/search_content/domain/repository.getAlbumDetails';
 
 @Component({
   selector: 'app-album-details',
@@ -19,6 +19,47 @@ export class AlbumDetailsComponent {
 
   async ngOnInit(): Promise<void> {
     const albumIDToSearch = this.activatedRoute.snapshot.paramMap.get('id') || '';
-    this.album = await this.getAlbumDetailsService.getAlbumDetails(albumIDToSearch)
+    this.album = await this.getAlbumDetailsService.getAlbumDetails(albumIDToSearch);
+
+    console.log('====================================');
+    console.log(this.album?.tracks);
+    console.log('====================================');
   }
+
+  public getArtist(): String {
+    const artists: Artist[] = this.album!.artists;
+    const nameArtists: String[] = artists.map(artist => artist.name)
+    return nameArtists.join(', ');
+  }
+
+  public getUrlImage(): String {
+    try {
+      const albums: Image[] = this.album!.images;
+      if (albums.length == 0) return './assets/images/not_artist_photo.jpg';
+      return albums[1].url;
+    } catch (error) {
+      return './assets/images/not_artist_photo.jpg';
+    }
+  }
+
+  public getGenders(): String {
+    const genres = this.album?.genres;
+    return genres?.join(', ') ?? '';
+  }
+
+  public playAlbum() {
+    const uriSpotify = this.album?.external_urls.spotify;
+    console.log('====================================');
+    console.log({ uriSpotify });
+    console.log('====================================');
+    window.open(uriSpotify);
+  }
+
+  public getCopyrights(): String[] {
+    const copyrights = this.album?.copyrights;
+    const copyrightsText = copyrights?.map(value => value.text) as String[];
+    return copyrightsText;
+  }
+
+
 }

@@ -7,25 +7,25 @@ export interface GetAlbumDetailsRepository {
 
 export interface Album {
     album_type:             string;
-    total_tracks:           number;
+    artists:                Artist[];
     available_markets:      string[];
+    copyrights:             Copyright[];
+    external_ids:           ExternalIDS;
     external_urls:          ExternalUrls;
+    genres:                 string[];
     href:                   string;
     id:                     string;
     images:                 Image[];
+    label:                  string;
     name:                   string;
-    release_date:           string;
+    popularity:             number;
     release_date_precision: string;
+    release_date:           string;
     restrictions:           Restrictions;
+    total_tracks:           number;
+    tracks:                 Tracks;
     type:                   string;
     uri:                    string;
-    copyrights:             Copyright[];
-    external_ids:           ExternalIDS;
-    genres:                 string[];
-    label:                  string;
-    popularity:             number;
-    artists:                Artist[];
-    tracks:                 Tracks;
 }
 
 export interface Artist {

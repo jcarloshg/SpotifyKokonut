@@ -1,0 +1,13 @@
+.trackImage {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: scale-down;
+}
+
+.albumLabelSmall {
+    color: white;
+    font-size: medium;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
