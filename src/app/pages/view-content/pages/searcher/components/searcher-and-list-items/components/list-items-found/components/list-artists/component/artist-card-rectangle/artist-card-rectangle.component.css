@@ -1,0 +1,35 @@
+.card {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.card:hover {
+    scale: 1.05;
+    box-shadow: 0px 0px 15px #00000059;
+}
+
+.artistLabelSmall {
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.artistName {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.artistImage {
+    width: 100px;
+    height: 100px;
+    object-fit: scale-down;
+    border-radius: 50%;
+}

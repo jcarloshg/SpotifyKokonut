@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class ViewerListComponentsComponent {
 
-  public optionsToDisplayLists = OptionsToDisplayLists.SHOW_ALBUMS;
+  public optionsToDisplayLists = OptionsToDisplayLists.SHOW_ARTISTS;
   private optionsToDisplayLists$: Subscription;
 
   constructor(private searcherAndListItemsService: SearcherAndListItemsService) {

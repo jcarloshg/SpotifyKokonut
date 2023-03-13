@@ -1,0 +1,11 @@
+<div *ngIf="artists">
+
+    <app-title-third value="Artistas" [setColorWhite]="true">
+    </app-title-third>
+
+    <div class="list-artists-container">
+        <app-artist-card-rectangle *ngFor="let artist of artists.items; let i = index"
+            [artist]="artist"></app-artist-card-rectangle>
+    </div>
+
+</div>

@@ -11,10 +11,10 @@
 
     <!-- button Albums -->
     <ng-container *ngIf="isSelectedAlbums(); else isNotSelectedAlbums">
-        <button class="btn btn-primary rounded-pill text-white me-1" (click)="setToDisplayListAlbums()">Albums</button>
+        <button class="btn btn-primary rounded-pill text-white me-1" (click)="setToDisplayListAlbums()">Álbumes</button>
     </ng-container>
     <ng-template #isNotSelectedAlbums>
-        <button class="btn btn-outline-primary rounded-pill me-1" (click)="setToDisplayListAlbums()">Albums</button>
+        <button class="btn btn-outline-primary rounded-pill me-1" (click)="setToDisplayListAlbums()">Álbumes</button>
     </ng-template>
 
 
