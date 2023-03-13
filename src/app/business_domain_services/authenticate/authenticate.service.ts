@@ -50,4 +50,8 @@ export class AuthenticateNavigator {
     this.router.navigate(['./contenido']);
   }
 
+  public goToLandingPage() {
+    this.router.navigate(['./ingresar/landing_page']);
+  }
+
 }

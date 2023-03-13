@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ViewContentInterceptorService } from './pages/view-content/interceptors/view-content-interceptor.service';
+import { OnlineStatusModule } from 'ngx-online-status';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ViewContentInterceptorService } from './pages/view-content/interceptors
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    OnlineStatusModule,
   ],
   providers: [
     {

@@ -2,6 +2,7 @@ import { HttpContextToken, HttpErrorResponse, HttpEvent, HttpHandler, HttpHeader
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { RequestAccessTokenService } from '../../../business_domain_services/authenticate/request-access-token.service';
+import { ListenNetworkStatusService } from '../../../shared/services/listen-network-status.service';
 
 export const DISABLE_GLOBAL_EXCEPTION_HANDLING = new HttpContextToken<boolean>(() => false);
 
@@ -12,6 +13,7 @@ export class ViewContentInterceptorService implements HttpInterceptor {
 
   constructor(
     private requestAccessTokenService: RequestAccessTokenService,
+    listenNetworkStatusService: ListenNetworkStatusService,
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
