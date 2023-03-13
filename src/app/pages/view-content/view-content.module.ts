@@ -7,12 +7,14 @@ import { ViewContentRoutingModule } from './view-content-routing.module';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { SearcherComponent } from './pages/searcher/searcher.component';
 import { SearcherAndListItemsModule } from './pages/searcher/components/searcher-and-list-items/searcher-and-list-items.module';
+import { ImageBackgroundComponent } from './pages/searcher/components/image-background/image-background.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     SearcherComponent,
+    ImageBackgroundComponent,
   ],
   imports: [
     CommonModule,
