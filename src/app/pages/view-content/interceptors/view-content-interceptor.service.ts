@@ -34,12 +34,7 @@ export class ViewContentInterceptorService implements HttpInterceptor {
 
     return next.handle(requestCloned).pipe(
       catchError((err: HttpErrorResponse) => {
-
-        console.log('====================================');
-        console.log(err.status);
         console.log({ err });
-        console.log('====================================');
-
         return throwError(err);
       })
     );;

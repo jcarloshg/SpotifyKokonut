@@ -1,20 +1,24 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { OnlineStatusService, OnlineStatusType } from "ngx-online-status";
-import { AuthenticateService } from 'src/app/business_domain_services/authenticate/authenticate.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListenNetworkStatusService {
 
+  static OFFLINE: number = 0;
+  static ONLINE: number = 1;
+
   constructor(
     private onlineStatusService: OnlineStatusService,
-    private authenticateService: AuthenticateService,
+    private router: Router,
   ) {
 
     this.onlineStatusService.status.subscribe((status: OnlineStatusType) => {
-      // use status
-      if (status == 0) this.authenticateService.navigator.goToLandingPage();
+      if (status == ListenNetworkStatusService.OFFLINE) {
+        this.router.navigate(['./publico/conexion-fallida']);
+      }
     });
 
   }

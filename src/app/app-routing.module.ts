@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/authenticate/authenticate.module').then(m => m.AuthenticateModule),
   },
   {
+    path: 'publico',
+    loadChildren: () => import('./pages/pages-share/pages-share.module').then(m => m.PagesShareModule),
+  },
+  {
     path: '**',
     redirectTo: 'ingresar',
   }

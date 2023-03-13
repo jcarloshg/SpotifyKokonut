@@ -6,7 +6,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ViewContentRoutingModule } from './view-content-routing.module';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { SearcherComponent } from './pages/searcher/searcher.component';
-import { ListTracksModule } from './pages/searcher/components/searcher-and-list-items/components/list-items-found/components/list-tracks/list-tracks.module';
 import { SearcherAndListItemsModule } from './pages/searcher/components/searcher-and-list-items/searcher-and-list-items.module';
 
 
@@ -17,8 +16,8 @@ import { SearcherAndListItemsModule } from './pages/searcher/components/searcher
   ],
   imports: [
     CommonModule,
-    ViewContentRoutingModule,
     FormsModule,
+    ViewContentRoutingModule,
     ComponentsModule,
     // mine
     SearcherAndListItemsModule,
