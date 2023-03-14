@@ -50,9 +50,20 @@ De acuerdo con los objetivos presentados en el documento de la prueba técnica s
 ## Estructura del proyecto
 
 ### Diagramas
+- Estructura del proyecto
+<img src="./src/doc/structure_proyect.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 600px">
 
+- Estructura de la `interfaz de usuario`
+<img src="./src/doc/structure_user_interface.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 600px">
+
+- Estructura de la `Servicio del caso de uso`
+<img src="./src/doc/structure_use_case_service.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 600px">
+
+- Estructura del `Caso de uso`
+<img src="./src/doc/structure_use_case.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 600px">
 
 ### Ejemplo getAlbumDetailsByID
+<img src="./src/doc/example_structure_project.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 600px">
 
 
 
@@ -77,9 +88,9 @@ Se utilizaron los colores principales de Spotify agregando un gris & morado para
 
 
 ## Estructura del proyecto en GitHub
-Estas son las ramas que se crearon para completar la porpuesta de la prueba técnica.
+Estas son las ramas que se crearon para completar la propuesta de la prueba técnica. [Ramas de GitHub](https://github.com/jcarloshg/SpotifyKokonut/branches)
 
-[add_img_branches]
+<img src="./src/doc/branches-github.png" alt="Alt text"  title="Optional title" style="display: inline-block; width: 400px">
 
 
 
