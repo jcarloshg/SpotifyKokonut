@@ -1,5 +1,7 @@
 # SpotifyKokonut
 
+El diseño de la aplicación se encuentra en [Figma](https://www.figma.com/file/KmEqRUw6lOtlXqftnSkhvE/Spotify?node-id=19%3A68&t=MaInF3f4ypP9gNXU-0)
+
 ## Tabla de contenido
 -   [Casos de uso](#casos-de-uso)
     -   [Autenticarse](#autenticarse)
